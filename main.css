@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+
+#main_div{
+	width:800px;
+	text-algin:center;
+	padding: 15px 20%;
+}
+
+#wrapper{
+	border-style:solid;
+	border-width:1px;
+}
