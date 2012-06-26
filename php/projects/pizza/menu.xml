@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<category title="pizza">
+		<item name="Cheese">
+			<sizes>
+				<size size="small">
+					<price>5.50</price>
+				</size>
+				<size size="large">
+					<price>9.75</price>
+				</size>
+			</sizes>
+			<description>Normal cheese pizza</description>
+		</item>
+		
+		<item name="Onions">
+			<sizes>
+				<size size="small">
+					<price>6.85</price>
+				</size>
+				<size size="large">
+					<price>10.85</price>
+				</size>
+			</sizes>
+			<description>Pizza with onions</description>
+		</item>
+		
+		<item name="Peppers">
+			<sizes>
+				<size size="small">
+					<price>6.85</price>
+				</size>
+				<size size="large">
+					<price>10.85</price>
+				</size>
+			</sizes>
+			<description>Pizza with peppers</description>
+		</item>
+		
+		<item name="Broccoli">
+			<sizes>
+				<size size="small">
+					<price>6.85</price>
+				</size>
+				<size size="large">
+					<price>10.85</price>
+				</size>
+			</sizes>
+			<description>Pizza with broccoli</description>
+		</item>
+		
+		<item name="Mushrooms">
+			<sizes>
+				<size size="small">
+					<price>6.85</price>
+				</size>
+				<size size="large">
+					<price>10.85</price>
+				</size>
+			</sizes>
+			<description>Pizza with mushrooms</description>
+		</item>
+		
+		<item name="Bacon">
+			<sizes>
+				<size size="small">
+					<price>6.85</price>
+				</size>
+				<size size="large">
+					<price>10.85</price>
+				</size>
+			</sizes>
+			<description>Pizza with bacon</description>
+		</item>
+				
+	</category>
+</menu>
