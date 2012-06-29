@@ -42,17 +42,7 @@
 #featured li.ui-tabs-selected{
 	background:url('images/triangle.png') 0px no-repeat;
 }
-#featured li.ui-tabs-selected:before{
-/*content:"";
-   position: absolute;
-   right: 100%;
-   top: 26px;
-   width: 0;
-   height: 0;
-   border-top: 13px solid transparent;
-   border-right: 26px solid #b20606;
-   border-bottom: 13px solid transparent;  */
-}
+
 #featured ul.ui-tabs-nav li.ui-tabs-selected a{ 
 	background:#b20606; 
 }
