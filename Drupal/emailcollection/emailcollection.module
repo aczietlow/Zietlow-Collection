@@ -1,0 +1,120 @@
+<?php 
+
+/**
+ * Implements hook_menu().
+ */
+function emailcollection_menu() {
+  $items = array();
+
+  $items['beta-invite'] = array(
+    'title' => 'Sign up for a beta invite!',
+    'description' => '',
+    'page callback' => 'beta_invite',
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+
+/*
+ * Create the beta-invite page.
+ */
+  
+function beta_invite() {
+  drupal_add_css(drupal_get_path('module', 'emailcollection') . '/css/custom.css', array('group' => CSS_DEFAULT, 'every_page' => FALSE));
+  $form = drupal_get_form('emailcollection_form');
+
+  //$output = '
+  	//<div id="ecb_text">
+  		//We are currently in a closed beta for PrivateDocs.com, if you\'d like an invite, please enter your email below.
+	//</div>
+  $output = '
+	<div id="email_collection_box">
+       <div id="ecb_private">
+           Private
+        </div>
+        <div id="ecb_docs">
+            Docs.com
+        </div>
+        <div id="ecb_video">
+            <iframe src="http://player.vimeo.com/video/42555450" width="320" height="197" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        <div id="ecb_info">
+            <div id="ecb_info_top">Come share with us <br> we\'re awesome</div>
+            <div id="ecb_info_bottom">Register for invite.</div>
+        </div>
+        <div id="ecb_teaser"> Giving away 25GB per user FREE for the first 1,000 beta testers! </div>
+        <div id="ecb_form"> '; 
+  $output .= drupal_render(drupal_get_form('emailcollection_form'));
+  $output .= '</div>
+        <div id="ecb_footer"> &copy; 2012 PrivateDocs Inc. </div>
+    </div>';
+
+
+   return $output;
+}
+
+/*
+ * The registration form for private docs beta.
+ */
+
+function emailcollection_form($form, &$form_state) {
+
+  $form['email'] = array(
+  	'#type' => 'textfield',
+    '#title' => t('Email Address'),
+    '#required' => TRUE,
+    '#attributes' => array('class' => array('emailcollection_email'), 'placeholder' => t('john@example.com')),
+    '#size' => 40,
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => '',
+    '#attributes' => array('class' => array('emailcollection_submit'))
+  );
+
+  return $form;
+}
+
+/*
+ * Validation for the emailcollection form.
+ */
+
+function emailcollection_form_validate($form, &$form_state) {
+  $exists = db_select('emails', 'e')
+    ->fields('e', array('email'))
+    ->condition('email', $form_state['values']['email'])
+    ->execute()
+    ->fetch();
+  if ($exists != NULL) {
+    form_set_error('email', 'Your email has already been registered, thanks for your interest!');
+  } 
+  if (!valid_email_address($form_state['values']['email'])) {
+    form_set_error('email', 'Please enter a valid email address.');
+  }
+}
+
+function emailcollection_form_submit($form, &$form_state) {
+  db_insert('emails')
+    ->fields(array(
+      'email' => $form_state['values']['email']
+    ))
+    ->execute();
+  drupal_set_message('Thank you for your interest in PrivateDocs.com, we hope to see you soon!', 'status');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<?php 
+
+/**
+ * Implements hook_schema().
+ */
+function emailcollection_schema() {
+  $schema['emails'] = array(
+    'description' => 'Email collection from tech crunch',
+    'fields' => array(
+      'eid' => array(
+        'description' => 'The ID of the email address',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => 'The actual email address',
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 50,
+      ),
+    ),
+    'indexes' => array(
+    ),
+    'unique keys' => array(
+    	'eid' => array('eid')),
+    'primary key' => array('eid'),
+  );
+  return $schema;
+}

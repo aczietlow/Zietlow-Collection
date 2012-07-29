@@ -1,0 +1,7 @@
+name = Email Collection
+description = Email Collection module for tech crunch only.
+version = 1.0
+package = Spyderbyte Design Custom
+core = 7.x
+files[] = emailcollection.install
+files[] = emailcollection.module

@@ -1,0 +1,108 @@
+#ecb_text {
+    font-size: 20px;
+}
+
+#email_collection_box {
+    border: 10px solid #92c3a5;
+    background-color: #1d3541;
+    width: 660px;
+    height: 380px;
+    color: white;
+    padding: 10px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+}
+
+#ecb_private {
+    font-size: 52px;
+    text-shadow: -2px -2px black;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+#ecb_docs {
+    font-size: 52px;
+    color: #fef200;
+    text-shadow: -2px -2px black;
+    margin-bottom: 0px;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+#ecb_video {
+    width: 50%;
+    height: 200px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+#ecb_info {
+    width: 50%;
+    height: 200px;
+    float: right;
+    font-size: 34px;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+
+#ecb_info_top {
+    height: 30%;
+
+}
+
+#ecb_info_bottom {
+    height: 30%;
+    margin-top:25%;
+    color: #fff300;
+}
+
+#ecb_teaser {
+    text-align: right;
+    font-size: 20px;
+}
+
+#ecb_form {
+    height: 45px;
+    width: 100%;
+    float:none;
+    position:relative;
+    top: -10px;
+}
+
+#ecb_footer {
+    text-align: right;
+    position:relative;
+    top:-15px;
+}
+
+.emailcollection_submit {
+    float: right;
+    border-radius: 0px;
+}
+
+#ecb_form input.form-submit {
+    border-color: transparent;
+    background: url("../images/register_submit.png");
+    width: 163px;
+    height: 43px;
+}
+
+.emailcollection_email {
+    float: right;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#emailcollection-form--2 .form-item-email label{
+    display: none;
+}
+
+#emailcollection-form .form-item-email label {
+    display: none;
+}
+
+
