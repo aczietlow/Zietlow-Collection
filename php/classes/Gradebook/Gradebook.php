@@ -40,7 +40,7 @@ class Classes {
 	public $numberOfSeats;
 	public $courseCode;
 
-	function __construct($name, $instructor, $numberOfSeats) {
+	function __construct($name, $instructor, $numberOfSeats, $courseCode) {
 		$this->name 			= $name;
 		$this->instructor 		= $instructor;
 		$this->numberOfSeats	= $numberOfSeats;
@@ -48,13 +48,29 @@ class Classes {
 	}
 }
 
+
+
+
+//Everything below here needs to be put in a class
+echo "
+*********************************************************************
+Welcom to the Gradebook program! Please select an action below 
+
+1- Add a new student
+2- Add a new Class
+
+*********************************************************************
+";
+
+$input = fgets(STDIN);
+
+
+echo "You selected option $input";
+/*
 $student 	= new Student("Ryan", "Wagner", 20);
-$class1 	= new Classes("Introduction to Algorithms", "Chris Zietlow", 25);
-$class2 	= new Classes("Software Engineering Concepts", "Wayne Fuller", 23);
-$class3 	= new Classes("Discrete Mathematics", "Chris Zietlow", 30);
-
-$output = $student->getName();
-
-echo $output;
+$class1 	= new Classes("Introduction to Algorithms", "Chris Zietlow", 25, "CSC105" );
+$class2 	= new Classes("Software Engineering Concepts", "Wayne Fuller", 23, "CSC101");
+$class3 	= new Classes("Discrete Mathematics", "Chris Zietlow", 30, "MTH150");
+*/
 
 ?>
