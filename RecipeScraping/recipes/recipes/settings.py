@@ -13,3 +13,7 @@ SPIDER_MODULES = ['recipes.spiders']
 NEWSPIDER_MODULE = 'recipes.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 
+
+IMAGES_STORE = '/home/aczietlow/tmp'
+
+ITEM_PIPELINES = ['scrapy.contrib.pipeline.images.ImagesPipeline']

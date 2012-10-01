@@ -13,9 +13,9 @@ class TestSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        #hxs = HtmlXPathSelector(response)
+        hxs = HtmlXPathSelector(response)
         i = RecipesItem()
         #i['domain_id'] = hxs.select('//input[@id="sid"]/@value').extract()
-        i['name'] = response.url 
+        i['image_urls'] = hxs.select('//img/@src').extract()
         #i['description'] = hxs.select('//div[@id="description"]').extract()
         return i
