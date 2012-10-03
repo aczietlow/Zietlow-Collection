@@ -8,7 +8,7 @@ from scrapy.item import Item, Field
 class RecipesItem(Item):
     # define the fields for your item here like:
     name = Field()
-    ingredients = Field()
+    ingredients = Field(serializer=str)
     directions = Field()
     cook_time = Field()
     servings = Field()

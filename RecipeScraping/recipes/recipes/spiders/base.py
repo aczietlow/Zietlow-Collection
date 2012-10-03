@@ -35,15 +35,20 @@ class RecipeComSpider(BaseSpider):
         i['servings'] = recipe.select('//span[@class = "servingsize"]/text()').extract()
         
         #Recipe ingredients
+        #extract() returns a unicode string, needs to be encoded to ascii
         for ingredient in ingredients:
-            ingredient_item = ingredient.select('div/div/div[@class = "itemQuantity floatleft W120 ML10"]/text()').extract()
-            ingredient_item += ingredient.select('div/div/div[@class = "floatleft itemUnit W420"]/text()').extract()
-            ingredients_list.append(ingredient_item)
+            ingredient_item = ingredient.select('.//div[@class = "itemQuantity floatleft W120 ML10"]/text()').extract()
+            ingredient_item_string = ingredient_item[ 0 ]
+            ingredient_item = ingredient.select('.//div[@class = "floatleft itemUnit W420"]/text()').extract()
+            ingredient_item_string += ' ' + ingredient_item[ 0 ]
+            ingredient_item_string = " " .join(ingredient_item_string.encode('ascii' , 'ignore').replace('\n', '').split())
+            ingredients_list.append(ingredient_item_string)
         i['ingredients'] = ingredients_list
         
         #Recipe directions
         for direction in directions:
             direction =  direction.select('div[@class = "stepbystepInstruction instruction"]/text()').extract()
+            #direction = direction[ 0 ].encode('ascii', 'ignore')
             directions_list.append(direction)
         i['directions'] = directions_list
         
