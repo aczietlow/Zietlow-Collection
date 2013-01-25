@@ -3,9 +3,10 @@
 class Login extends Controller {
 	function __construct() {
 		parent::__construct();
-		echo 'we are in index';
-
-		$this->view->msg = "Welcome!";
+	}
+	
+	function index() {
+		$this->view->msg = "Login or we will find you";
 		$this->view->render('login/index');
 	}
 }

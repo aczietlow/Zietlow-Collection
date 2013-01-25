@@ -3,14 +3,16 @@
 class Help extends Controller {
 	function __construct() {
 		parent::__construct();
-		echo 'we are in the help!<br />';
+	}
+	
+	function index() {
+		$this->view->render('help/index');
 	}
 	
 	public function other($arg = false) {
-		echo 'this is other!<br />';
-		echo 'Optional:<br />' . $arg;
 		
 		require 'models/help_model.php';
 		$model = new Help_Model();
+		$this->view->qTime = $model->quitTime();
 	}
 }
