@@ -17,6 +17,7 @@
 		<?php else:?>
 		<a href="<?php echo URL;?>login">Login</a>
 		<?php endif?>
+		<a href="<?php echo URL;?>register">Register</a>
 		
 	</div>
 
