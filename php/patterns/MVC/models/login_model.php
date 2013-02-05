@@ -14,8 +14,15 @@ class Login_Model extends Model {
 			':password' => $_POST['login'],
 		));
 		
-		$data = $sth->fetchAll();
-		print_r($data);
+		$count = $sth->rowCount();
+		if ($count > 0 ){
+			Session::init();
+			Session::set('loggedIn', true);
+			header('location: ../dashboard');
+		}
+		else {
+			header('location: ../login');
+		}
 	}
 
 }
