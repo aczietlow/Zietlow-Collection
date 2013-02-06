@@ -11,7 +11,7 @@ class Login_Model extends Model {
 		WHERE login = :login AND password = MD5(:password)");
 		$sth->execute(array(
 			':login' => $_POST['login'],
-			':password' => $_POST['login'],
+			':password' => $_POST['password'],
 		));
 		
 		$count = $sth->rowCount();
