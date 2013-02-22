@@ -1,5 +1,5 @@
 *.settings
 *.project
 *.buildpath
-
+.settings/*
 .settings/org.eclipse.php.core.prefs
