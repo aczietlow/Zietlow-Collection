@@ -1,14 +1,16 @@
 @CHARSET "UTF-8";
 input {
 	float: left;
-	margin:top;
-	display:none;
+	margin-top:10px;
 }
 
 label {
 	float:left;
 	clear:both;
+	width: 100px;
+	margin-top: 10px;
 }
+
 .clearfix {
 	clear:both;
 }

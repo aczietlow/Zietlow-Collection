@@ -5,7 +5,8 @@
 <body>
 <a href="index.php">back</a>
 <p>
-<?php echo $_POST['name'] ;?>
+<?php echo $_POST['name'] . "\n" ;?>
+<?php echo $_POST['age'] ;?>
 </p>
 </body>
 
